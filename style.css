@@ -110,7 +110,8 @@ a.logo {
     align-items: start; /* instead of center */
     position: relative;
     overflow: hidden;
-    padding-top: 90px; /* match header height */
+    padding-top: 70px; /* match header height */
+    padding-bottom: 30px;
 }
 
 
