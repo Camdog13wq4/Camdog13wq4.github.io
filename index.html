@@ -69,43 +69,6 @@
             background-clip: text;
         }
 
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .cart-icon {
-            position: relative;
-            cursor: pointer;
-            padding: 0.75rem;
-            background: var(--secondary-color);
-            border-radius: var(--border-radius);
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 600;
-        }
-
-        .cart-icon:hover {
-            background: #1e4080;
-            transform: translateY(-2px);
-        }
-
-        .cart-count {
-            background: var(--accent-color);
-            color: var(--primary-color);
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
@@ -378,23 +341,6 @@
             color: var(--accent-color);
         }
 
-        .add-to-cart {
-            background: var(--secondary-color);
-            color: var(--white);
-            border: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: var(--border-radius);
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .add-to-cart:hover {
-            background: #1e4080;
-            transform: translateY(-2px);
-        }
-
         /* Features Section */
         .features {
             background: var(--white);
@@ -567,154 +513,6 @@
             padding: 0 2rem;
         }
 
-        /* Shopping Cart Modal */
-        .cart-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            z-index: 2000;
-            backdrop-filter: blur(5px);
-        }
-
-        .cart-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: var(--border-radius);
-            max-width: 600px;
-            width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
-            box-shadow: var(--shadow-hover);
-        }
-
-        .cart-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid var(--light-gray);
-        }
-
-        .cart-header h3 {
-            font-size: 1.8rem;
-            color: var(--primary-color);
-        }
-
-        .close-cart {
-            background: none;
-            border: none;
-            font-size: 2rem;
-            cursor: pointer;
-            color: var(--dark-gray);
-            transition: var(--transition);
-        }
-
-        .close-cart:hover {
-            color: var(--accent-color);
-            transform: scale(1.1);
-        }
-
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .cart-item:last-child {
-            border-bottom: none;
-        }
-
-        .item-info {
-            flex: 1;
-        }
-
-        .item-name {
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 0.25rem;
-        }
-
-        .item-details {
-            color: var(--dark-gray);
-            font-size: 0.9rem;
-        }
-
-        .remove-item {
-            background: var(--accent-color);
-            color: var(--primary-color);
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .remove-item:hover {
-            background: #f4d03f;
-        }
-
-        .cart-total {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 2rem 0;
-            text-align: center;
-            color: var(--primary-color);
-            padding: 1rem;
-            background: var(--light-gray);
-            border-radius: var(--border-radius);
-        }
-
-        .checkout-btn {
-            width: 100%;
-            background: var(--secondary-color);
-            color: var(--white);
-            border: none;
-            padding: 1.2rem;
-            border-radius: var(--border-radius);
-            font-size: 1.2rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .checkout-btn:hover {
-            background: #1e4080;
-        }
-
-        /* Success Message */
-        .success-message {
-            position: fixed;
-            top: 120px;
-            right: 20px;
-            background: linear-gradient(45deg, #27ae60, #2ecc71);
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: var(--border-radius);
-            transform: translateX(400px);
-            opacity: 0;
-            transition: var(--transition);
-            z-index: 1500;
-            box-shadow: var(--shadow);
-            font-weight: 600;
-        }
-
-        .success-message.show {
-            transform: translateX(0);
-            opacity: 1;
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero-container {
@@ -787,12 +585,6 @@
     <header>
         <nav>
             <div class="logo">Dunwoody Coasters</div>
-            <div class="nav-actions">
-                <div class="cart-icon" onclick="toggleCart()">
-                    🛒 Cart
-                    <span class="cart-count" id="cartCount">0</span>
-                </div>
-            </div>
         </nav>
     </header>
 
@@ -853,7 +645,6 @@
                         <p class="product-description">Handcrafted from reclaimed oak with natural finish. Each coaster features unique grain patterns that tell their own story.</p>
                         <div class="product-footer">
                             <span class="product-price">$24.99</span>
-                            <button class="add-to-cart" onclick="addToCart('Rustic Wood Collection', 24.99)">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -868,7 +659,6 @@
                         <p class="product-description">Sleek ceramic coasters with gold trim accents. Dishwasher safe and perfect for modern and contemporary homes.</p>
                         <div class="product-footer">
                             <span class="product-price">$32.99</span>
-                            <button class="add-to-cart" onclick="addToCart('Ceramic Elegance Set', 32.99)">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -883,7 +673,6 @@
                         <p class="product-description">Unique marble and granite coasters sourced from quarries. Each piece showcases natural variations and beauty.</p>
                         <div class="product-footer">
                             <span class="product-price">$45.99</span>
-                            <button class="add-to-cart" onclick="addToCart('Natural Stone Collection', 45.99)">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -898,7 +687,6 @@
                         <p class="product-description">Personalized coasters with your logo, artwork, or text. Perfect for corporate gifts and special occasions.</p>
                         <div class="product-footer">
                             <span class="product-price">$39.99</span>
-                            <button class="add-to-cart" onclick="addToCart('Custom Design Series', 39.99)">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -913,7 +701,6 @@
                         <p class="product-description">Sustainable bamboo coasters with contemporary design. Lightweight, durable, and environmentally conscious choice.</p>
                         <div class="product-footer">
                             <span class="product-price">$19.99</span>
-                            <button class="add-to-cart" onclick="addToCart('Bamboo Eco Series', 19.99)">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -921,4 +708,94 @@
                 <div class="product-card">
                     <div class="product-image">
                         <img src="https://images.unsplash.com/photo-1571115764595-644a1f56a55c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Crystal Glass Premium">
-                        <div
+                        <div class="product-badge">New Arrival</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Crystal Glass Premium</h3>
+                        <p class="product-description">Elegant crystal glass coasters with anti-slip cork base. Adds a touch of sophistication to your dining experience.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$29.99</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="features-container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Our Coasters?</h2>
+                <p class="section-subtitle">Explore the exceptional features and benefits of our coasters that make them the perfect choice for your home or business.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h3 class="feature-title">Handcrafted Quality</h3>
+                    <p class="feature-description">Each coaster is meticulously handcrafted by skilled artisans, ensuring unique character and superior quality.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="feature-title">Eco-Friendly Materials</h3>
+                    <p class="feature-description">We use sustainable and eco-friendly materials in our coasters, making them a responsible choice for the environment.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="feature-title">Custom Designs</h3>
+                    <p class="feature-description">Our coasters can be customized with your choice of designs, logos, or artwork, perfect for personal use or corporate gifts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Contact Us to Buy</h3>
+                <p>If you have any questions or would like to place an order, please contact us using the form below or email us directly at <a href="mailto:ccirastorza@gmail.com" style="color: var(--accent-color);">ccirastorza@gmail.com</a>.</p>
+            </div>
+            <div class="contact-form">
+                <form action="mailto:ccirastorza@gmail.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 Dunwoody Coasters. All rights reserved.</p>
+            <p>Designed with passion by Your Name.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Add your JavaScript here
+    </script>
+</body>
+</html>
