@@ -110,7 +110,7 @@ a.logo {
     align-items: start; /* instead of center */
     position: relative;
     overflow: hidden;
-    padding-top: 30px; /* match header height */
+    padding-top: 90px; /* match header height */
 }
 
 
@@ -260,7 +260,7 @@ a.logo {
 /* Products Section */
 .products {
     background: var(--light-gray);
-    padding: 8rem 0;
+    padding: 6rem 0;
 }
 
 .section-header {
@@ -369,7 +369,7 @@ a.logo {
 /* Features Section */
 .features {
     background: var(--white);
-    padding: 8rem 0;
+    padding: 6rem 0;
 }
 
 .features-container {
